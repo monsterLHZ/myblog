@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>发布博客</title>
+    <link rel="stylesheet" href="../css/update.css">
+    <link rel="stylesheet" href="../css/markdown.css">
+    <script type="text/javascript" src="../render/marked.min.js"></script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <div class="title">文章标题:
+            <input type="text" id='title'>
+        </div>
+        <div class="des">主要内容:
+            <input type="text" id='des'>
+        </div>
+        <h3>详细类容</h3>
+        <div class="text-content">
+            <textarea onkeyup="compile()" id='textdes'></textarea>
+            <div id="show" class="markdown"></div>
+        </div>
+        <button>发表</button>
+        <button type="button" style="cursor: pointer;" class="btn">
+            上传图片
+            <input type="file" name="file" id='file' class="fileup" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" style="cursor: pointer;">
+        </button>
+    </div>
+    <script type="text/javascript" src='../js/update.js'></script>
+</body>
+
+</html>

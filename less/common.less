@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Microsoft YaHei", "tahoma", "Srial", "helvetica", "sans-serif";
+    font-size: 14px;
+    color: #3e3e3e;
+}
+
+a {
+    color: #3E3E3E;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//设置居中，宽度默认1180，结果为传入数字*10,
+.set-center {
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+.markdown {
+    blockquote {
+        border-left: 10px solid #aaa;
+        padding: 10px 20px;
+        background-color: #f4f7f8;
+    }
+    pre {
+        color: white;
+        background: #222827;
+        font-size: 18px;
+        line-height: 20px;
+        padding: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    p,
+    pre,
+    blockquote {
+        margin: 0 0 1.1em;
+    }
+    blockquote p{
+    	margin: 0 ;
+    }
+    img{
+    	max-width: 100%;
+    	height: auto;
+    }
+    h1,h2,h3,h4,h5,h6{
+    	margin:1.5em 0;
+    }
+}

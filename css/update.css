@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Microsoft YaHei", "tahoma", "Srial", "helvetica", "sans-serif";
+  font-size: 14px;
+  color: #3e3e3e;
+}
+a {
+  color: #3E3E3E;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.set-center {
+  width: 100%;
+  max-width: 1180px;
+  margin: auto;
+}
+.markdown blockquote {
+  border-left: 10px solid #aaa;
+  padding: 10px 20px;
+  background-color: #f4f7f8;
+}
+.markdown pre {
+  color: white;
+  background: #222827;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 20px;
+}
+.markdown p {
+  font-size: 16px;
+  line-height: 20px;
+}
+.markdown p,
+.markdown pre,
+.markdown blockquote {
+  margin: 0 0 1.1em;
+}
+.markdown blockquote p {
+  margin: 0 ;
+}
+.markdown img {
+  max-width: 100%;
+  height: auto;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin: 1.5em 0;
+}
+.content {
+  width: 100%;
+  max-width: 1180px;
+  margin: auto;
+}
+.content .title,
+.content .des {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.content .title input,
+.content .des input {
+  width: 100%;
+  max-width: 556px;
+  height: 20px;
+  border-radius: 5px;
+  border: solid 1px #ccc;
+  padding-left: 4px;
+  margin-left: 3px;
+}
+.content .text-content {
+  height: 500px;
+}
+.content .text-content textarea {
+  float: left;
+  box-sizing: border-box;
+  font-size: 20px;
+  width: 50%;
+  resize: none;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+}
+.content .text-content #show {
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  background: #eee;
+  overflow-y: auto;
+  padding: 10px;
+}
+.content .btn {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.content .btn .fileup {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 100px;
+  opacity: 0;
+}
