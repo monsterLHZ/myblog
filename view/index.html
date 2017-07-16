@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>博客首页</title>
+    <meta charset="UTF-8">
+    <title>博客首页</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.1/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="">
 </head>
+
 <body>
-	<h1>这是我的博客</h1>
+	<div class="header">codelhz's blog</div>
+    <div id="app">
+    	<div class="wapper" v-for="data in list">
+    		<div class="title" >{{data.title}}</div>
+    		<div class="des">{{data.des}}</div>
+    		<div class="info">
+    			<div class="type">{{data.type}}</div>
+    			<div class="time">{{data.time}}</div>
+    			<div class="click">{{data.click}}</div>
+    		</div>
+    	</div>
+    </div>
+    <script type="text/javascript" src="/js/index.js"></script>
 </body>
+
 </html>

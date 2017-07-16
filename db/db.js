@@ -38,11 +38,19 @@ module.exports = {
 
     },
     publish: (data) => { //发表博客
-        let blog = new blogModel({ title: data.title, des: data.des,type:data.type,time:data.date,click:0,text:data.textdes }); //实例化一行数据
-        console.log(blog);
-        blog.save((err)=>{
-        	console.log(err);
+        let blog = new blogModel({ title: data.title, des: data.des, type: data.type, time: data.date, click: 0, text: data.textdes }); //实例化一行数据
+        blog.save((err) => {
+            console.log(err);
         }); //插入数据
         return true;
-    }
+    },
+    findlist: (res) => {
+        blogModel.find({}, (err, data) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.status(200).json(data);
+            }
+        });
+    },
 };

@@ -23,4 +23,8 @@ module.exports=(app)=>{
 			res.sendStatus(400);
 		}
 	});
+
+	app.get('/getlist',(req,res)=>{
+		db.findlist(res);
+	});
 }
