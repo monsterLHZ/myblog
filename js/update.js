@@ -40,9 +40,9 @@
     })
 
     function updateimg(name, data) {
-        data = { img: data,name:name };
+        data = { img: data, name: name };
         $.ajax({
-            url: '/updateimg/'+name,
+            url: '/updateimg/' + name,
             method: 'POST',
             data: JSON.stringify(data),
             headers: {
@@ -50,9 +50,9 @@
             },
             success: function() {
                 alert("上传成功");
-                var text='\n![这里写图片描述](http://127.0.0.1/img/'+name+') ';
-                content.value+=text;
-                
+                var text = '\n![这里写图片描述](http://127.0.0.1/img/' + name + ') ';
+                content.value += text;
+
                 content.onkeyup();
             },
             error: function() {
@@ -60,4 +60,27 @@
             }
         });
     }
+
+    $('#publish').click(function() {
+        var title = $('#title').val();
+        var des = $('#des').val();
+        var type = $('#type').val();
+        var textdes = $('#textdes').val();
+        var date = new Date().toLocaleDateString();
+        var data = { title: title, des: des, type: type, textdes: textdes, date: date };
+        $.ajax({
+            url: '/publish',
+            method: 'POST',
+            data: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json;charset=utf8'
+            },
+            success: function() {
+                alert("上传成功");
+            },
+            error: function() {
+                alert("上传失败");
+            }
+        });
+    });
 })();

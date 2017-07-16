@@ -66,12 +66,14 @@ ul {
   margin: auto;
 }
 .content .title,
-.content .des {
+.content .des,
+.content .type {
   margin-top: 10px;
   font-weight: bold;
 }
 .content .title input,
-.content .des input {
+.content .des input,
+.content .type input {
   width: 100%;
   max-width: 556px;
   height: 20px;
