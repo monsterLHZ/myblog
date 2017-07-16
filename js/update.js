@@ -4,7 +4,7 @@
         renderer: rendererMD,
         gfm: true,
         tables: true,
-        breaks: false,
+        breaks: true,
         pedantic: false,
         sanitize: false,
         smartLists: true,
@@ -42,7 +42,7 @@
     function updateimg(name, data) {
         data = { img: data,name:name };
         $.ajax({
-            url: '/file/upload',
+            url: '/updateimg/'+name,
             method: 'POST',
             data: JSON.stringify(data),
             headers: {
@@ -50,7 +50,9 @@
             },
             success: function() {
                 alert("上传成功");
-                var text='/r/n![这里写图片描述](http://127.0.0.1:3000/img/'+name+') ';
+                var text='\n![这里写图片描述](http://127.0.0.1/img/'+name+') ';
+                content.value+=text;
+                
                 content.onkeyup();
             },
             error: function() {
