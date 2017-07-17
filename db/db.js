@@ -53,4 +53,13 @@ module.exports = {
             }
         });
     },
+    findblog:(id,res)=>{
+        blogModel.findOne({'_id':id},(err,data)=>{
+            if(err){
+                console.log(err);
+            }else{
+                res.status(200).json(data);
+            }
+        });
+    }
 };

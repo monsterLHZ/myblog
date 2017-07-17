@@ -27,4 +27,8 @@ module.exports=(app)=>{
 	app.get('/getlist',(req,res)=>{
 		db.findlist(res);
 	});
+
+	app.get('/blog/:id',(req,res)=>{
+		db.findblog(req.params.id,res);
+	});
 }

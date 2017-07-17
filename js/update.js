@@ -19,8 +19,6 @@
     // Outputs: <p>I am using <strong>markdown</strong>.</p>
     var content = document.querySelectorAll('#textdes')[0];
     var show = document.querySelectorAll('#show')[0];
-    console.log(show);
-    console.log(content);
     content.onkeyup = function() {
         var text = content.value;
         var html = marked(text);

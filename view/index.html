@@ -6,14 +6,14 @@
     <title>博客首页</title>
     <script src="https://cdn.bootcss.com/vue/2.4.1/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
-	<div class="header">codelhz's blog</div>
+	<div class="header"><div>codelhz's blog</div></div>
     <div id="app">
     	<div class="wapper" v-for="data in list">
-    		<div class="title" >{{data.title}}</div>
+    		<div class="title" ><a :href="'/blog.html?id='+data._id">{{data.title}}</a></div>
     		<div class="des">{{data.des}}</div>
     		<div class="info">
     			<div class="type">{{data.type}}</div>
