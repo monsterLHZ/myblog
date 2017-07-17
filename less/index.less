@@ -1,9 +1,43 @@
 @import 'common.less';
-.header{
-	div{
-		.set-center;
-		height: 50px;
-		font-size: 24px;
-		line-height: 50px;
-	}
+
+
+#app {
+
+    .set-center;
+    .wapper {
+        background: #fff;
+        .titlewapper {
+            padding: 10px 20px;
+            border-bottom: 1px solid #e5e5e5;
+            .title {
+                height: 40px;
+                font-size: 22px;
+                line-height: 40px;
+                font-weight: 700;
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+            ul {
+                font-size: 14px;
+                //color: #838383;
+                margin-left: -10px;
+                li {
+                    float: left;
+                    margin-left: 10px;
+                    height: 20px;
+                    line-height: 20px;
+                    &:before {
+                        content: "• ";
+                    }
+                }
+                .clearfix;
+            }
+            .des {
+                color: #909090;
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+        }
+    }
 }

@@ -16,7 +16,9 @@
 </head>
 
 <body>
-    <div class="header"></div>
+    <div class="header">
+        <div><a href="/" style="color: white">我的博客|</a><span>发表</span></div>
+    </div>
     <div class="content">
         <div class="title">文章标题:
             <input type="text" id='title'>
@@ -24,7 +26,7 @@
         <div class="des">主要内容:
             <input type="text" id='des'>
         </div>
-         <div class="type">文章类型:
+        <div class="type">文章类型:
             <input type="text" id='type'>
         </div>
         <h3>详细类容</h3>
@@ -32,7 +34,7 @@
             <textarea onkeyup="compile()" id='textdes'></textarea>
             <div id="show" class="markdown"></div>
         </div>
-        <button id="publish">发表</button>
+        <button id="publish" class="btn" style="">发表</button>
         <button type="button" style="cursor: pointer;" class="btn">
             上传图片
             <input type="file" name="file" id='file' class="fileup" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" style="cursor: pointer;">

@@ -3,13 +3,13 @@
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
-            tomarkdown(JSON.parse(request.responseText).text);
+            torender(JSON.parse(request.responseText));
         }
     };
     request.open("GET", "/blog/" + id);
     request.send();
 })();
-function tomarkdown(data){
+function torender(data){
 	var rendererMD = new marked.Renderer();
     marked.setOptions({
         renderer: rendererMD,
@@ -28,5 +28,7 @@ function tomarkdown(data){
     });
     var content=document.querySelectorAll('.content')[0];
     console.log(content);
-    content.innerHTML=marked(data);
+    content.innerHTML=marked(data.text);
+    document.querySelectorAll('.title')[0].innerHTML=data.title;
+     document.querySelectorAll('.des')[0].innerHTML=data.des;
 }

@@ -3,9 +3,10 @@
   padding: 0;
 }
 body {
-  font-family: "Microsoft YaHei", "tahoma", "Srial", "helvetica", "sans-serif";
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
   font-size: 14px;
   color: #3e3e3e;
+  background: #dce2fe;
 }
 a {
   color: #3E3E3E;
@@ -21,14 +22,70 @@ ul {
 }
 .set-center {
   width: 100%;
-  max-width: 1180px;
+  max-width: 960px;
   margin: auto;
+}
+.header {
+  background: #6699cc;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.1);
 }
 .header div {
   width: 100%;
-  max-width: 1180px;
+  max-width: 960px;
   margin: auto;
   height: 50px;
   font-size: 24px;
   line-height: 50px;
+}
+.header div a {
+  color: white;
+}
+.header div span {
+  color: white;
+  font-size: 16px;
+}
+#app {
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+}
+#app .wapper {
+  background: #fff;
+}
+#app .wapper .titlewapper {
+  padding: 10px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#app .wapper .titlewapper .title {
+  height: 40px;
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: 700;
+}
+#app .wapper .titlewapper .title a:hover {
+  text-decoration: underline;
+}
+#app .wapper .titlewapper ul {
+  font-size: 14px;
+  margin-left: -10px;
+}
+#app .wapper .titlewapper ul li {
+  float: left;
+  margin-left: 10px;
+  height: 20px;
+  line-height: 20px;
+}
+#app .wapper .titlewapper ul li:before {
+  content: "• ";
+}
+#app .wapper .titlewapper ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#app .wapper .titlewapper .des {
+  color: #909090;
+  margin-bottom: 10px;
+  font-size: 16px;
 }

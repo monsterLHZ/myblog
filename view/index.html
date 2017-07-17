@@ -10,17 +10,23 @@
 </head>
 
 <body>
-	<div class="header"><div>codelhz's blog</div></div>
+    <div class="header">
+        <div><a href="javascript:void(0)">我的博客|</a><span>首页</span></div>
+    </div>
     <div id="app">
-    	<div class="wapper" v-for="data in list">
-    		<div class="title" ><a :href="'/blog.html?id='+data._id">{{data.title}}</a></div>
-    		<div class="des">{{data.des}}</div>
-    		<div class="info">
-    			<div class="type">{{data.type}}</div>
-    			<div class="time">{{data.time}}</div>
-    			<div class="click">{{data.click}}</div>
-    		</div>
-    	</div>
+        <div class="wapper" v-for="data in list">
+            <div class="titlewapper">
+                <div class="title"><a :href="'/blog.html?id='+data._id">{{data.title}}</a></div>
+                <div class="des">{{data.des}}</div>
+                <ul class="info">
+                    <li class="time">发布于{{data.time}}</li>
+                    <li>作者 coderlhz</li>
+                    <li class="click">{{data.click}}次浏览</li>
+                    <li class="type">类型 {{data.type}}</li>
+                    
+                </ul>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="/js/index.js"></script>
 </body>

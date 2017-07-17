@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的登录</title>
+	<link rel="stylesheet" href="/css/login.css">
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+        <div class="login">
+            <div>
+                <div class="line"></div>
+                <div class="tran"></div>
+                <div class="circle"></div>
+            </div>
+            <form action="/api/login" method="post">
+                <div>
+                    <i class="icon-user fa fa-user" aria-hidden='true'></i>
+                    <input type="text" name="username" placeholder="请输入用户名">
+                </div>
+                <div>
+                     <i class="icon-key fa fa-key"></i>
+                    <input type="password" name="password" placeholder="请输入密码">
+                </div>
+                <button type="sumbit">登录</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
