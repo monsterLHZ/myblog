@@ -90,6 +90,7 @@ ul {
   max-width: 960px;
   margin: auto;
   border-bottom: 2px solid #aaa;
+  margin-bottom: 20px;
 }
 .wapper .des {
   font-size: 18px;

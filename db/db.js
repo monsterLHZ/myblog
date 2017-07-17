@@ -34,8 +34,11 @@ module.exports = {
     newuser: (data) => { //新建用户
 
     },
-    finduser: (data) => { //查找用户
+    finduser: (data, cb) => { //查找用户
+        userModel.findOne({ 'name': data.username, 'psw': data.password }, (err, data) => {
+            cb(data);
 
+        });
     },
     publish: (data) => { //发表博客
         let blog = new blogModel({ title: data.title, des: data.des, type: data.type, time: data.date, click: 0, text: data.textdes }); //实例化一行数据
@@ -45,7 +48,8 @@ module.exports = {
         return true;
     },
     findlist: (res) => {
-        blogModel.find({}, (err, data) => {
+
+        blogModel.find({}).sort({ '_id': 'desc' }).exec((err, data) => {
             if (err) {
                 console.log(err);
             } else {
@@ -53,11 +57,11 @@ module.exports = {
             }
         });
     },
-    findblog:(id,res)=>{
-        blogModel.findOne({'_id':id},(err,data)=>{
-            if(err){
+    findblog: (id, res) => {
+        blogModel.findOne({ '_id': id }, (err, data) => {
+            if (err) {
                 console.log(err);
-            }else{
+            } else {
                 res.status(200).json(data);
             }
         });
