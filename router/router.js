@@ -66,6 +66,16 @@ module.exports = (app) => {
     	res.redirect('/login.html');
     });
 
+    app.get('/delete/:id',(req,res)=>{
+        db.deleteblog(req.params.id,(err)=>{
+            if(err){
+                res.status(400).json(err);
+            }else{
+                res.redirect('/');
+            }
+        });
+    });
+
     app.get('*', (req, res) => {
         res.redirect('/');
     });

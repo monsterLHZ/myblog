@@ -65,5 +65,10 @@ module.exports = {
                 res.status(200).json(data);
             }
         });
+    },
+    deleteblog:(id,cb)=>{
+        blogModel.remove({'_id':id},(err)=>{
+            cb(err);
+        });
     }
 };
