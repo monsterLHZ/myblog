@@ -48,7 +48,8 @@
             },
             success: function() {
                 alert("上传成功");
-                var text = '\n![这里写图片描述](http://127.0.0.1/img/' + name + ') ';
+
+                var text = '\n![这里写图片描述](http://' + window.location.host + '/img/' + name + ') ';
                 content.value += text;
 
                 content.onkeyup();
