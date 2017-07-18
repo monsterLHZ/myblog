@@ -62,6 +62,9 @@ module.exports = {
             if (err) {
                 console.log(err);
             } else {
+                blogModel.update({ '_id': id },{$set:{click:data.click+1}},(err)=>{
+                    console.log(err);
+                })
                 res.status(200).json(data);
             }
         });
