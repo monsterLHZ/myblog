@@ -43,7 +43,10 @@ module.exports = {
     publish: (data) => { //发表博客
         let blog = new blogModel({ title: data.title, des: data.des, type: data.type, time: data.date, click: 0, text: data.textdes }); //实例化一行数据
         blog.save((err) => {
-            console.log(err);
+            if (err) {
+                console.log(err);
+            }
+
         }); //插入数据
         return true;
     },
@@ -62,16 +65,31 @@ module.exports = {
             if (err) {
                 console.log(err);
             } else {
-                blogModel.update({ '_id': id },{$set:{click:data.click+1}},(err)=>{
-                    console.log(err);
+                blogModel.update({ '_id': id }, { $set: { click: data.click + 1 } }, (err) => {
+                    if (err) {
+                        console.log(err);
+                    }
+
                 })
                 res.status(200).json(data);
             }
         });
     },
-    deleteblog:(id,cb)=>{
-        blogModel.remove({'_id':id},(err)=>{
+    deleteblog: (id, cb) => {
+        blogModel.remove({ '_id': id }, (err) => {
             cb(err);
+        });
+    },
+    changedata: (data, cb) => {
+        let newdata=data;
+        blogModel.findOne({ '_id': data.id }, (err, data) => {
+            if (err) {
+                cb(err);
+            } else {
+                blogModel.update({ '_id': newdata.id }, { $set: { title: newdata.title, des: newdata.des, type: newdata.type, text: newdata.textdes } }, (err) => {
+                    cb(err);
+                });
+            }
         });
     }
 };

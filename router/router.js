@@ -18,13 +18,26 @@ module.exports = (app) => {
     app.post('/publish', (req, res) => {
         if (req.session.user) {
             let data = req.body;
-            if (db.publish(data)) {
-                res.sendStatus(200);
+            //console.log(data.id);
+            if (data.id) {
+                db.changedata(data, (err) => {
+                    if (err) {
+                        // statement
+                        res.status(400).json(err);
+                    } else {
+                        res.sendStatus(200);
+                    }
+                });
             } else {
-                res.sendStatus(400);
+                if (db.publish(data)) {
+                    res.sendStatus(200);
+                } else {
+                    res.sendStatus(400);
+                }
             }
+
         } else {
-        	res.status(400).json({info:'你没有发表权限'});
+            res.status(400).json({ info: '你没有发表权限' });
         }
 
     });
@@ -62,15 +75,15 @@ module.exports = (app) => {
         }
     });
 
-    app.get('/login',(req,res)=>{
-    	res.redirect('/login.html');
+    app.get('/login', (req, res) => {
+        res.redirect('/login.html');
     });
 
-    app.get('/delete/:id',(req,res)=>{
-        db.deleteblog(req.params.id,(err)=>{
-            if(err){
+    app.get('/delete/:id', (req, res) => {
+        db.deleteblog(req.params.id, (err) => {
+            if (err) {
                 res.status(400).json(err);
-            }else{
+            } else {
                 res.redirect('/');
             }
         });

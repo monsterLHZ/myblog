@@ -27,8 +27,10 @@ function torender(data){
         }
     });
     var content=document.querySelectorAll('.content')[0];
-    console.log(content);
-    content.innerHTML=marked(data.text);
+    if(data.text){
+        content.innerHTML=marked(data.text);
+    }
+    
     document.querySelectorAll('.title')[0].innerHTML=data.title;
      document.querySelectorAll('.des')[0].innerHTML=data.des;
 }
