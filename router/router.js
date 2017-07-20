@@ -2,6 +2,7 @@
 var multipartMiddleware = multipart();*/
 let fs = require('fs');
 let db = require('../db/db.js');
+let path=require('path');
 module.exports = (app) => {
     app.post('/updateimg/:image', (req, res) => {
         let img = req.body.img.split(',')[1];
@@ -62,7 +63,7 @@ module.exports = (app) => {
     });
 
     app.get('/update', (req, res) => {
-        let read = fs.createReadStream('./userhtml/update.html');
+        let read = fs.createReadStream(path.join(__dirname,'../userhtml/update.html'));
         if (req.session.user) {
             read.on('data', (chunk) => {
                 res.write(chunk);
