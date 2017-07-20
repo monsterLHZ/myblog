@@ -54,6 +54,8 @@
   color: yellow;
 }
 .markdown code {
-  white-space: normal;
-  word-break: break-all;
+  width: 100%;
+}
+.markdown pre {
+  overflow-x: auto;
 }
