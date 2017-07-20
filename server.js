@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 
 
 var app = express();
-app.use(express.static(__dirname + '/view'));
+app.use('/',express.static(__dirname + '/view'));
 app.use('/js', express.static(__dirname + '/js'));
 app.use('/render', express.static(__dirname + '/render'));
 app.use('/img', express.static(__dirname + '/img'));
