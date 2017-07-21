@@ -11,6 +11,7 @@ app.use('/js', express.static(__dirname + '/js'));
 app.use('/render', express.static(__dirname + '/render'));
 app.use('/img', express.static(__dirname + '/img'));
 app.use('/css', express.static(__dirname + '/css'));
+app.use('/icon', express.static(__dirname + '/icon'));
 
 
 app.use(bodyParser.json({ limit: '50mb' })); // for parsing application/json

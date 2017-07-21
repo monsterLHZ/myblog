@@ -33,4 +33,7 @@ function torender(data){
     
     document.querySelectorAll('.title')[0].innerHTML=data.title;
      document.querySelectorAll('.des')[0].innerHTML=data.des;
+     document.querySelectorAll('title')[0].innerHTML=data.title;
+     document.querySelectorAll('[name=description]')[0].content=data.des;
+     document.querySelectorAll('[name=keywords]')[0].content=data.type;
 }
