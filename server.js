@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var app = express();
 app.use('/',express.static(__dirname + '/view'));
 app.use('/js', express.static(__dirname + '/js'));
-app.use('/render', express.static(__dirname + '/render'));
+app.use('/vendor', express.static(__dirname + '/vendor'));
 app.use('/img', express.static(__dirname + '/img'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/icon', express.static(__dirname + '/icon'));
